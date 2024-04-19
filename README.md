@@ -4,12 +4,12 @@ The purposes of this exercise include performing CRUD (Create, Read, Update, Del
 
 ## Part One (located in NoSQL_setup_starter.ipynb):
 
-The database called uk_food was created and populated by importing a json file into MongoDB. The resulting collection is called establishments. A missing halal restaurant called Penang Flavours was added to the database and was used as a reference for most of the analysis. Due to it missing partial data (specifically the BusinessTypeID), the entire database was queried to locate the equivalent of "Restaurant/Cafe/Canteen" used on other records, since this was the classification of Penang Flavours.
+The database called uk_food was created and populated by importing a json file into MongoDB. The resulting collection is called establishments. A missing halal restaurant called Penang Flavours was added to the database and was used as a reference for most of the analysis. Due to it missing partial data (specifically the BusinessTypeID), the entire database was queried to locate the BusinessTypeID of the BusinessType "Restaurant/Cafe/Canteen" used on other records, since this was the classification of Penang Flavours.
 
 The database was further updated by converting the longitude and latitude to floats and the RatingValue to integers instead of strings. Records containing data for the Local Authority of Dover were also removed.
 
 ## Part Two (located in NoSQL_analysis_starter.ipynb):
-
+This notebook holds the queries that were used to answer certain analysis questions posed by "Eat Safe, Love", a magazine reporting on the new restaurant, Penang Flavours.
 
 ## Questions to resolve: 
 ### Which establishments have a hygiene score equal to 20?
@@ -30,7 +30,7 @@ Below is a screenshot of the establishments in London that had a rating of at le
 
 ### What are the top 5 establishments with a RatingValue of 5, sorted by lowest hygiene score, nearest to the new restaurant added, "Penang Flavours"?
 
-This query involved locating the longitude and latitude of the newly added Penang Flavours restaurant to be used as a reference to find the top five establishments that have the highest rating and sorted by hygiene, from the best hygiene to the worst. Noticeably, it can be seen that the highest rated establishments tended to have better scores in hygiene. Below are those establishments that are within +/- 0.01 degrees in latitude and longitude of Penang Flavours.
+This query involved locating the longitude and latitude of the newly added Penang Flavours restaurant to be used as a reference in location the closest top five establishments that have the highest rating and sorted by hygiene, from the best hygiene to the worst. Noticeably, it can be seen that the highest rated establishments tended to have better scores in hygiene. Below are those establishments that are within +/- 0.01 degrees in latitude and longitude to that of Penang Flavours.
 
 ![alt text](Resources/images/top_five.png)
 
